@@ -3,6 +3,6 @@
     { "src": "app.py", "use": "@vercel/python" }
   ],
   "routes": [
-    { "src": "/Besto/(.*)", "dest": "app.py" }
+    { "src": "/Enc/(.*)", "dest": "app.py" }
   ]
 }
