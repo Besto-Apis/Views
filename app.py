@@ -354,17 +354,19 @@ def send_number(id):
             tokens = token_file.read().splitlines()
 
         results = []
-        with ThreadPoolExecutor(max_workers=500) as executor:
+        with ThreadPoolExecutor(max_workers=100) as executor:
             results = list(executor.map(lambda token: like(token, id), tokens))
         success_count = sum(1 for result in results if result == 200)
         response_message = []
         if success_count > 0:
+            time.sleep(10)
             response_message.append(' - Status : Good | Online !')
             response_message.append(f" - Done Send Likes To Id : {id}")
             print(tt)
             name(tt, id)
             namee = get(id)
             import subprocess
+            time.sleep(10)
             response_message.append(f' - Name : {namee}')
             response_message.append(" - Dev : Besto | @BestoPy")
         else:
@@ -377,7 +379,7 @@ def send_number(id):
         return Response(f" - Error : {str(e)}", status=500)
 
 if __name__ == '__main__':
-    app.run(port=5000, host='0.0.0.0')
+    app.run()
     
     
     
