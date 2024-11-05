@@ -47,6 +47,27 @@ def enc(id):
             return Enc_Iddd
     return " - Besto Off The Server !"
     
+def Enc_ID(id):
+    url = f"https://besto-enc-id.vercel.app/Enc/{id}?Key=C4-Besto-K6JK"
+    response = requests.get(url)
+    if response.status_code == 200:
+        match = re.search(r"EncryPted Id : (\S+)", response.text)
+        if match:
+            Enc_Iddd = match.group(1)
+            return Enc_Iddd
+    return " - Besto Off The Server !"
+    
+def Dec_ID(id):
+    url = f"https://besto-dec-id.vercel.app/Dec/{id}?Key=C4-Besto-K6PJ"
+    response = requests.get(url)
+    if response.status_code == 200:
+        match = re.search(r"DecryPted Id : (\S+)", response.text)
+        if match:
+            Dec_Iddd = match.group(1)
+            return Dec_Iddd
+    return " - Besto Off The Server !"
+    
+    
 def get_status(Iddd):
     cookies = {
     '_ga_KE3SY7MRSD': 'GS1.1.1725471621.1.1.1725471621.0.0.0',
@@ -363,11 +384,16 @@ class Proxy:
         connection.close()
         
     def help(self):
-        zby = f"120000018d08{self.EncryptedPlayerid}101220022a800308{self.EncryptedPlayerid}10{self.EncryptedPlayerid}22d2015b625d5b635d2d20433420426f742056325b6637656435635d0ad985d980d8b1d8add980d8a8d8a720d8a8d98320d981d98a20d8a7d984d8a8d988d8aa20d8a7d984d8aed8a7d8b520d8a8d986d8a720d8a7d98ad987d8a720d8a7d984d985d8b3d8aad8aed8afd98520d89b20d986d8add98620d8b3d8b9d98ad8afd988d98620d98420d8a7d8b3d8aad8aed8afd8a7d985d98320d8a7d984d8a8d988d8aa20d8a7d984d8aed8a7d8b520d8a8d986d8a7202e20d8a7d8b3d8aad985d8aad8b920d8a820d988d982d8aad983202e0000000028f0ed8db7064a3d0a18efbca2efbcb2efbcb3e385a4efbcadefbcafefbcb2efbcaf10dedd8dae031893b6d3ad0320d7012883f9f7b103420c47524f564553545249544348520261726a520a4c68747470733a2f2f67726170682e66616365626f6f6b2e636f6d2f76392e302f3132303434333431303231333534352f706963747572653f77696474683d313630266865696768743d313630100118017200"
+        zby = f"120000018d08{self.EncryptedPlayerid}101220022a800308{self.EncryptedPlayerid}10{self.EncryptedPlayerid}22d2015b625d5b635d5b6161656430655d2d2057656c636f6d6520546f205b4646423733325d435b4646434135355d345b4646443936465d20425b4646453538365d4f5b4646454439435d545b4646463542315d20565b4646464243435d5b4646464243435d325b6637656435635d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028f0ed8db7064a3d0a18efbca2efbcb2efbcb3e385a4efbcadefbcafefbcb2efbcaf10dedd8dae031893b6d3ad0320d7012883f9f7b103420c47524f564553545249544348520261726a520a4c68747470733a2f2f67726170682e66616365626f6f6b2e636f6d2f76392e302f3132303434333431303231333534352f706963747572653f77696474683d313630266865696768743d313630100118017200"
         self.sock1200.send(bytes.fromhex(zby))
+        
+    def help01(self):
+        zby = f"120000018d08{self.EncryptedPlayerid}101220022a800308{self.EncryptedPlayerid}10{self.EncryptedPlayerid}22d2015b625d5b635d5b6637656435635d0aefbba3d980efbaaeefbaa3d980efba92efba8e20efba91efbb9a20efbb93efbbb220d8a7efbb9fefba92efbbaed8aa20d8a7efbb9fefbaa8efba8ed8b520efba91efbba8efba8e20d8a7efbbb3efbbacefba8e20d8a7efbb9fefbba4efbab4efba98efbaa8efbaaad98520d89b20efbba7efbaa4efbba620efbab3efbb8cefbbb4efbaaad988d98620d98420d8a7efbab3efba98efbaa8efbaaad8a7efbba3efbb9a20d8a7efbb9fefba92efbbaed8aa20d8a7efbb9fefbaa8efba8ed8b520efba91ef28f0ed8db7064a3d0a18efbca2efbcb2efbcb3e385a4efbcadefbcafefbcb2efbcaf10dedd8dae031893b6d3ad0320d7012883f9f7b103420c47524f564553545249544348520261726a520a4c68747470733a2f2f67726170682e66616365626f6f6b2e636f6d2f76392e302f3132303434333431303231333534352f706963747572653f77696474683d313630266865696768743d313630100118017200"
+        self.sock1200.send(bytes.fromhex(zby))
+           
    
     def help1(self):  
-        Hakim_Packets = f"120000018d08{self.EncryptedPlayerid}101220022a800308{self.EncryptedPlayerid}10{self.EncryptedPlayerid}22d2015b625d5b635d4d656e752031203a200a202020200a5b6161656430655d2d202f35203e203520496e2053716975640a2d202f36203e203620496e2053716975640a2d202f796f7574203e20596f7554756265727320496e20467265696e64200a2d202f6c696b655b69645d203e2053656e64204c696b65730a2d202f696e666f5b69645d203e2047657420496e666f204f662049640000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028f0ed8db7064a3d0a18efbca2efbcb2efbcb3e385a4efbcadefbcafefbcb2efbcaf10dedd8dae031893b6d3ad0320d7012883f9f7b103420c47524f564553545249544348520261726a520a4c68747470733a2f2f67726170682e66616365626f6f6b2e636f6d2f76392e302f3132303434333431303231333534352f706963747572653f77696474683d313630266865696768743d313630100118017200"
+        Hakim_Packets = f"120000018d08{self.EncryptedPlayerid}101220022a800308{self.EncryptedPlayerid}10{self.EncryptedPlayerid}22d2015b625d5b635d4d656e752031203a200a202020200a5b6161656430655d2d202f3573203e203520496e2053716975640a2d202f3673203e203620496e2053716975640a2d202f796f7574203e20596f7554756265727320496e20467265696e64200a2d202f6c696b655b69645d203e2053656e64204c696b65730a2d202f696e666f5b69645d203e2047657420496e666f204f66204964000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028f0ed8db7064a3d0a18efbca2efbcb2efbcb3e385a4efbcadefbcafefbcb2efbcaf10dedd8dae031893b6d3ad0320d7012883f9f7b103420c47524f564553545249544348520261726a520a4c68747470733a2f2f67726170682e66616365626f6f6b2e636f6d2f76392e302f3132303434333431303231333534352f706963747572653f77696474683d313630266865696768743d313630100118017200"
         self.sock1200.send(bytes.fromhex(Hakim_Packets))
 
     def help2(self):        
@@ -711,11 +737,11 @@ class Proxy:
                         			if "Active" in status_line and self.bbb == True:
                         				self.Beston = True
                         				expire_line = Sexx[i + 2]                  
-                        				print(Enc_Id)
+                        				#print(Enc_Id)
                         				time_remaining = re.search(r'Expire In : (.+)', expire_line).group(1)   
-                        				msg = f"[b][c][7cfc00] - Key Activited !\n - Key : {Key}\n - Status : Active\n - Expire In : {time_remaining}\n - Send /help For Commands\n - Dev : C4 Team Officiel"
+                        				msg = f"[b][c][7cfc00] - Key Activited !\n\n[ffffff] - Key : {Key}\n - Status : Active\n - Expire In : {time_remaining}\n - Send /help For Commands\n\n[7cfc00] - Dev : C4 Team Officiel"
                         				Besto_PackEt = Besto_Msg(self.EncryptedPlayerid,msg)
-                        				self.sock1200.send(bytes.fromhex(Besto_PackEt))   
+                        				client.send(bytes.fromhex(Besto_PackEt))   
                         				                     				 
                         			elif "Expired!" in status_line:
                         				self.Beston = False
@@ -732,7 +758,9 @@ class Proxy:
                     	try:
                     		
                     		threading.Thread(target=self.help).start()
-                    		time.sleep(0.3)                                    		
+                    		time.sleep(0.3)
+                    	#	threading.Thread(target=self.help01).start()
+                    	#	time.sleep(0.3)            		
                     		threading.Thread(target=self.help1).start()
                     		time.sleep(0.3)                 		
                     		threading.Thread(target=self.help2).start()
@@ -746,14 +774,14 @@ class Proxy:
                     		pass
 
                                                                 
-                    if '1200' in data.hex()[0:4] and b'/5' in data and self.Beston == True:
+                    if '1200' in data.hex()[0:4] and b'/5s' in data and self.Beston == True:
                     	time.sleep(0.5)
                     	msg = "[b][i][c][7cfc00] - 5 In Sqiud On !\n - Enjoy ! \n - By : C4 Team"
                     	Besto_PackEt = Besto_Msg(self.EncryptedPlayerid,msg)
                     	self.sock1200.send(bytes.fromhex(Besto_PackEt))
                     	threading.Thread(target=self.gen_squad5).start()
                     	
-                    if '1200' in data.hex()[0:4] and b'/6' in data and self.Beston == True:
+                    if '1200' in data.hex()[0:4] and b'/6s' in data and self.Beston == True:
                     	time.sleep(0.5)
                     	msg = "[b][i][c][7cfc00] - 6 In Sqiud On !\n - Enjoy ! \n - By : C4 Team"
                     	Besto_PackEt = Besto_Msg(self.EncryptedPlayerid,msg)
@@ -876,45 +904,8 @@ class Proxy:
                         if '***' in i:
                         	i = i.replace('***', '106')                        	
                         iddd = str(i).split('(\\x')[0]
-                        cookies = {
-                    '_ga': 'GA1.1.2123120599.1674510784',
-                    '_fbp': 'fb.1.1674510785537.363500115',
-                    '_ga_7JZFJ14B0B': 'GS1.1.1674510784.1.1.1674510789.0.0.0',
-                    'source': 'mb',
-                    'region': 'MA',
-                    'language': 'ar',
-                    '_ga_TVZ1LG7BEB': 'GS1.1.1674930050.3.1.1674930171.0.0.0',
-                    'datadome': '6h5F5cx_GpbuNtAkftMpDjsbLcL3op_5W5Z-npxeT_qcEe_7pvil2EuJ6l~JlYDxEALeyvKTz3~LyC1opQgdP~7~UDJ0jYcP5p20IQlT3aBEIKDYLH~cqdfXnnR6FAL0',
-                    'session_key': 'efwfzwesi9ui8drux4pmqix4cosane0y',
-                }
-                        headers = {
-                    'Accept-Language': 'en-US,en;q=0.9',
-                    'Connection': 'keep-alive',
-                    'Origin': 'https://shop2game.com',
-                    'Referer': 'https://shop2game.com/app/100067/idlogin',
-                    'Sec-Fetch-Dest': 'empty',
-                    'Sec-Fetch-Mode': 'cors',
-                    'Sec-Fetch-Site': 'same-origin',
-                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Redmi Note 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36',
-                    'accept': 'application/json',
-                    'content-type': 'application/json',
-                    'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"',
-                    'sec-ch-ua-mobile': '?1',
-                    'sec-ch-ua-platform': '"Android"',
-                    'x-datadome-clientid': '6h5F5cx_GpbuNtAkftMpDjsbLcL3op_5W5Z-npxeT_qcEe_7pvil2EuJ6l~JlYDxEALeyvKTz3~LyC1opQgdP~7~UDJ0jYcP5p20IQlT3aBEIKDYLH~cqdfXnnR6FAL0',
-                }
-                        json_data = {
-                    'app_id': 100067,
-                    'login_id': f'{iddd}',
-                    'app_server_id': 0,
-                }
-                        res = requests.post('https://shop2game.com/api/auth/player_id_login', cookies=cookies, headers=headers, json=json_data)
-                        response = res.json()
-                        Name = response['nickname']
-                        region = response['region']       
-                        Iddd = iddd
-                        Ban = get_status(Iddd)
-                        Msg = f'''[b][i][c] - Done Get Info !\n - Id : {iddd}\n - Name : {Name}\n - Region : {region}\n - Status : {Ban}'''
+                        api = requests.get(f'https://besto-api-inf.vercel.app/Besto-Info?Id={iddd}&Key=C4-BESTO-4QPL-7DAY')                      
+                        Msg = f'''[b][i][c]{api.text}'''
                         Besto_PackEt = Besto_Msg(self.EncryptedPlayerid,Msg) 
                         self.sock1200.send(bytes.fromhex(Besto_PackEt)) 
                              	    	                         
@@ -1099,7 +1090,7 @@ class Proxy:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.bind((ip, port))
         s.listen()
-        print(f" - Socks5 proxy server is running on {ip}:{port}")
+        print(f" - Socks5 proxy Server is running on {ip}:{port}\n - Dev : Besto !")
 
         while True:
             conn, addr = s.accept()
